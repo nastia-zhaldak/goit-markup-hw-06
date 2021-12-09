@@ -211,6 +211,7 @@ body {
   color: var(--first-text-color);
   background-color: var(--accent-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 /* Studio page */
 .priority {
@@ -625,9 +626,10 @@ body {
   transform: scale(1.5) rotate(200deg) translate(100px, 100px);
 }
 .modal {
+  padding: 40px;
   width: 528px;
   height: 581px;
-  background-color: var(--second-background-color);
+  background-color: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
@@ -636,7 +638,6 @@ body {
   left: 50%;
   transform: scale(1) rotate(0) translate(-50%, -50%);
   transition: transform 300ms;
-  padding: 40px 39px 40px 41px;
 }
 .modal-close {
   position: absolute;
@@ -650,6 +651,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000000;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close:focus,
+.modal-close:hover {
+  color: var(--accent-color);
+}
+.close-icon {
+  fill: currentColor;
 }
 .modal-title {
   font-weight: 700;
@@ -660,12 +670,9 @@ body {
   color: var(--main-title-color);
   margin-bottom: 12px;
 }
-.modal-form-field {
-  margin-bottom: 10px;
-}
+
 .modal-input {
   width: 100%;
-  height: 120px;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
@@ -687,12 +694,24 @@ body {
 .modal-input-wrap {
   position: relative;
 }
+.modal-form-field {
+  margin-bottom: 12px;
+}
+
 .modal-input-text {
-  margin-bottom: 4px;
+  display: block;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: #757575;
+  margin-bottom: 4px;
+}
+.modal-text::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
 }
 .icon-modal-form {
   position: absolute;
@@ -711,6 +730,7 @@ body {
   resize: none;
   outline: none;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
 }
 .modal-check-text {
   font-size: 14px;
@@ -721,11 +741,14 @@ body {
   align-items: center;
 }
 .icon-check {
-  fill: var(--first-text-color);
+  fill: transparent;
 }
 .modal-check:checked + .modal-check-text span {
   background-color: var(--accent-color);
   border: none;
+}
+.modal-check:checked + .modal-check-text .icon-check {
+  fill: var(--first-text-color);
 }
 .modal-check-text span {
   width: 16px;
@@ -736,6 +759,30 @@ body {
   justify-content: center;
   align-items: center;
 }
+.modal-checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.btn-modal {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+  height: 50px;
+  color: var(--first-text-color);
+  background-color: var(--accent-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  padding: 0;
+}
+
 /* .modal-check-text::before {
   content: "";
   width: 16px;
@@ -757,6 +804,7 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  text-decoration-skip-ink: none;
 }
 
 .is-hidden {
@@ -796,6 +844,12 @@ body {
   padding-left: 16px;
   margin-right: 12px;
 }
+.footer-form-text::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
+}
 .footer-form-button {
   width: 200px;
   height: 50px;
@@ -808,23 +862,8 @@ body {
   letter-spacing: 0.06em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
 }
-.btn-modal {
-  display: block;
-  margin: 0 auto;
-  width: 200px;
-  height: 50px;
-  color: var(--first-text-color);
-  background-color: var(--accent-color);
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.87;
-  letter-spacing: 0.06em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-}
-
 .footer-icon-form {
   width: 24px;
   height: 24px;
